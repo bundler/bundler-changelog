@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+
+def prs(on = 'master')
+  commits = `git log --oneline origin/#{on} --`.split("\n")
+  commits.reverse_each.map { |c| c =~ /(Auto merge of|Merge pull request) #(\d+)/ && Regexp.last_match(2) }.compact
+end
+
+# last_stable = `git ls-remote origin`.split("\n").map {|r| r =~ %r{refs/tags/v([\d.]+)$} && $1 }.compact.map {|v| Gem::Version.create(v) }.max
+# last_stable = last_stable.segments[0, 2].<<("stable").join("-")
+last_stable = '1-15-stable'
+
+in_release = prs('HEAD') - prs(last_stable)
+changes = CSV.table(File.expand_path('changes.csv', __dir__)).map { |r| r[:pr].to_s }.compact
+
+def confirm(prompt = '')
+  loop do
+    print(prompt)
+    print(': ') unless prompt.empty?
+    break if $stdin.gets.strip == 'y'
+  end
+rescue Interrupt
+  abort
+end
+
+in_release.each do |pr|
+  next if changes.include?(pr)
+  system('open', "https://github.com/bundler/bundler/pull/#{pr}")
+  confirm "Pull request #{pr}"
+end

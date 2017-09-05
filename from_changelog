@@ -1,0 +1,57 @@
+require_relative "lib/changelog"
+
+# The script used to bootstrap releases.csv & changes.csv
+
+class Parser
+  def initialize(file)
+    @file = file
+  end
+  
+  def parse
+    @changelog = Changelog.new
+
+    @file.each_line.each_with_index do |l, i|
+      if match = l.match(/^## (?<version>#{Gem::Version::VERSION_PATTERN})( \((?<date>.+?)\))?$/)
+        version = Gem::Version.new match["version"]
+        date = match["date"] && Date.parse(match["date"])
+        @changelog.releases << Release.new(version, date)
+      elsif l =~ /^\s{0,2}-\s?(.*)/m
+        release.sections << Section.new("Changes") unless section
+        entry&.message&.strip!
+        section.entries << Entry.new(nil, release, section, [], [], $1)
+      elsif l =~ /^([\w"()?]+):$/ || l =~ /(Bugfixes from v1.7.13):$/
+        release.sections << Section.new($1)
+      elsif entry
+        entry.message += l
+      end
+    end
+
+    @changelog
+  end
+
+  def release; @changelog.releases.last; end
+  def section; release&.sections&.last; end
+  def entry; section&.entries&.last; end
+end
+
+bundler_repo = Pathname("../bundler").expand_path(__dir__)
+changelog = bundler_repo/"CHANGELOG.md"
+
+changelog = Parser.new(changelog).parse
+
+require "csv"
+
+releases = CSV.generate(write_headers: true, headers: Release.members) do |csv|
+  changelog.releases.sort_by(&:version).each do |release|
+    csv << release.to_a
+  end
+end
+Pathname("releases.csv").expand_path(__dir__).write(releases)
+
+changes = CSV.generate(write_headers: true, headers: Entry.members) do |csv|
+  changelog.entries.each do |entry|
+    # pr,release,section,issues,authors,message
+    csv << [entry.pr, entry.release.version, entry.section.name, entry.issues.join("|"), entry.authors.join("|"), entry.message.strip]
+  end
+end
+Pathname("changes.csv").expand_path(__dir__).write(changes)

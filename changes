@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative 'lib/changelog'
+require 'csv'
+
+dir = Pathname(__dir__).expand_path
+File.open('CHANGELOG.md', 'w') do |f|
+  Changelog.from_csv(dir).write(to: f)
+end
