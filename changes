@@ -6,3 +6,7 @@ dir = Pathname(__dir__).expand_path
 File.open('CHANGELOG.md', 'w') do |f|
   Changelog.from_csv(dir).write(to: f)
 end
+
+Pathname.glob(dir / "*.csv").each do |csv|
+  csv.write CSV.table(csv).to_csv
+end

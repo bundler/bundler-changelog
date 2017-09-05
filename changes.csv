@@ -1347,41 +1347,41 @@ isolation."
 ,1.15.4,Bugfixes,"","","bundler will fail gracefully when the bundle path contains the system path separator (#5485, ajwann)"
 ,1.15.4,Bugfixes,"","",failed gem downloads will be retried consistently across different RubyGems versions (@shayonj)
 ,1.15.4,Bugfixes,"","",`bundle pristine` will respect build options while re-building native extensions (@NickLaMuro)
-5590
-5587
+5590,,,,,
+5587,,,,,
 5608,1.16.0.pre.1,Bugfixes,4830,segiddins,allow configuring a mirror fallback timeout without a trailing slash
 5624,1.16.0.pre.1,Features,4845,segiddins,allow using non-branch symbolic refs in a git source
 5628,1.16.0.pre.1,Features,5627,mal,allow absolute paths in the `cache path` setting
-5636
-5639
-5647
-5646
+5636,,,,,
+5639,,,,,
+5647,,,,,
+5646,,,,,
 5650,1.16.0.pre.1,Bugfixes,,segiddins,fix handling of mirrors for file: urls that contain upper-case characters
-5660
-5667
-5671
+5660,,,,,
+5667,,,,,
+5671,,,,,
 5665,2.0.0.pre.1,Features,,colby-swandale,errors are printed to `stderr` instead of `stdout`
-5645
-5675
-5684
-5634
+5645,,,,,
+5675,,,,,
+5684,,,,,
+5634,,,,,
 5635,1.16.0.pre.1,Features,,koic,gems created via `bundle gem` with rspec have `--require spec_helper` in their `.rspec` file
-5683
-5686
-5692
+5683,,,,,
+5686,,,,,
+5692,,,,,
 5695,1.16.0.pre.1,Bugfixes,,mdeering,list the correct gem host for `rake release` when `allowed_push_host` has been set
-5688
+5688,,,,,
 5703,1.16.0.pre.1,Features,5616,segiddins,`bundle env` includes `Gem.ruby` and the `bundle` binstub shebang when they don't match
 5704,2.0.0.pre.1,Features,,colby-swandale,`bundle init` generates a `gems.rb` instead of a `Gemfile`
-5220
+5220,,,,,
 5701,1.16.0.pre.1,Bugfixes,5700,segiddins,ensure `Bundler.original_env` preserves all env keys that bundler sets
-5717
+5717,,,,,
 5681,1.16.0.pre.1,Bugfixes,,segiddins,ensure `bundle pristine` removes files added to a git gem
 5681,1.16.0.pre.1,Features,,segiddins,allow passing gem names to `bundle pristine`
 5705,2.0.0.pre.1,Features,5698,segiddins,remove the `github.https` setting
 5705,2.0.0.pre.1,Features,5699,segiddins,remove the `github` gemfile git source shortcut
 5722,2.0.0.pre.1,Features,2646,segiddins|jhhere,require passing `--all` to `bundle update` to update all gems
-5484
+5484,,,,,
 5702,1.16.0.pre.1,Bugfixes,5429,segiddins,load plugin files from path gems before gem installation
 5716,1.16.0.pre.1,Features,5049,segiddins,`bundle version` and `bundle env` include the commit and build date for the bundler gem
 5719,2.0.0.pre.1,Features,,segiddins,bundler will prefer a `gems.rb` file in the same directory as a `Gemfile`
@@ -1389,98 +1389,98 @@ isolation."
 5718,1.16.0.pre.1,Features,4952|3096|4417,segiddins,gemfiles are `eval`ed one fewer time when running `bundle install`
 5783,1.16.0.pre.1,Bugfixes,5730,segiddins,ensure gems containing manpages are properly set up
 5727,2.0.0.pre.1,Bugfixes,,segiddins,`bundle update --source NAME` will no longer unlock a gem with the given `NAME`
-5795
-5802
-5805
+5795,,,,,
+5802,,,,,
+5805,,,,,
 5788,2.0.0.pre.1,Features,3871,segiddins,allow conflicts between bundler dependencies and the current bundler version
 5725,2.0.0.pre.1,Features,3831|5963,segiddins,running `bundle` without an explicit command prints a concise help message instead of installing
 5806,1.16.0.pre.1,Bugfixes,,segiddins,avoid fetching remote specs when all effected gems are in groups that are not being installed
-5813
-5800
+5813,,,,,
+5800,,,,,
 5815,1.16.0.pre.1,Bugfixes,5712,gxespino,allow `BUNDLE_GEMFILE` to be a relative path
 5782,2.0.0.pre.1,Features,3983,segiddins|smlance,add a global cache for downloaded `.gem` files
 5792,2.0.0.pre.1,Features,3671|3696|4059,segiddins,"pin gems to only come either from the source they were declared to come from (the top-level source if declared at the top-level of the Gemfile, else a scoped source), or a source that it transitively ""inherited"" from the gems that required it"
-5823
+5823,,,,,
 5820,2.0.0.pre.1,Features,,segiddins,default git sources have been removed
-5827
-5833
+5827,,,,,
+5833,,,,,
 5793,2.0.0.pre.1,Features,4025|4034,segiddins|Zorbash,remove the `bundle console` command in favor of `bundle gem`'s `bin/console` binstub
-5832
+5832,,,,,
 5613,1.16.0.pre.1,Features,,segiddins,the `fileutils` gem is now vendored so different versions of the gem can be activated
 5790,2.0.0.pre.1,Features,3872,segiddins,suppress `using...` messages during installation when the version of a gem has not changed
-5829
+5829,,,,,
 5798,2.0.0.pre.1,Features,4008,segiddins,the `bundle cache` command will behave the same as the `package` command
 5818,2.0.0.pre.1,Features,,segiddins,"default to resolving for ""specific"" platform triples, instead of ""generic"" platforms"
-5839
-5841
-5834
-5837
+5839,,,,,
+5841,,,,,
+5834,,,,,
+5837,,,,,
 5838,2.0.0.pre.1,Bugfixes,,segiddins,`Kernel#gem` is no longer made public
-5857
+5857,,,,,
 5850,1.16.0.pre.1,Bugfixes,5846,segiddins,show a more helpful error message when a gem fails to install due to a corrupted lockfile
-5858
+5858,,,,,
 5843,2.0.0.pre.1,Features,4619,segiddins,remove the `frozen` setting in favor of `deployment`
-5853
+5853,,,,,
 5852,1.16.0.pre.1,Bugfixes,5851,stefansedich,add a process lock to allow multiple concurrent `bundle install`s
-5864
-5867
-5870
+5864,,,,,
+5867,,,,,
+5870,,,,,
 5871,1.16.0.pre.1,Bugfixes,,greysteil,ensure that specifications always return an array for `#extensions`
 5844,1.16.0.pre.1,Features,5842,segiddins,speed up no-op installations
 5822,1.16.0.pre.1,Features,,deivid-rodriguez,default to keeping the lockfile in the default gem template
 5811,2.0.0.pre.1,Features,3955,segidins,the bundler CLI will no longer persist options and flags
-5887
-5888
-5883
-5882
-5893
+5887,,,,,
+5888,,,,,
+5883,,,,,
+5882,,,,,
+5893,,,,,
 5878,1.16.0.pre.1,Features,5876,segiddins,add a special bundler binstub that ensures the correct version of bundler is activated
-5874
-5891
+5874,,,,,
+5891,,,,,
 5860,2.0.0.pre.1,Features,,segiddins|smlance,default installation to `./.bundle` instead of the prior default of the system gem path (which can be acchieved by setting `path.system`)
 5897,1.16.0.pre.1,Bugfixes,,colby-swandale,print a helpful error message when using a gem in the Gemfile with an empty name
-5892
+5892,,,,,
 5896,2.0.0.pre.1,Bugfixes,5895,segiddins,ensure that the git cache is per-user when using per-app installation paths
-5901
-5906
-5903
-5907
+5901,,,,,
+5906,,,,,
+5903,,,,,
+5907,,,,,
 5900,1.16.0.pre.1,Bugfixes,,segiddins,ensure that all gemfiles are included in `bundle env`
 5909,2.0.0.pre.1,Features,4706,koic,only print the version number when running `bundle --version`
 5902,1.16.0.pre.1,Features,,segiddins|greysteil,speed up dependency resolution and ensure that all resolvable gemfiles can be installed
-5911
-5917
-5919
-5916
-5921
-5922
-5929
-5934
+5911,,,,,
+5917,,,,,
+5919,,,,,
+5916,,,,,
+5921,,,,,
+5922,,,,,
+5929,,,,,
+5934,,,,,
 5920,1.16.0.pre.1,Features,4754,colby-swandale,add a `bundle list` command that prints the gems in use
-5912
-5942
+5912,,,,,
+5942,,,,,
 5658,1.16.0.pre.1,Features,,adrian-gomez,allow adding credentials to a gem source during deployment when `allow_deployment_source_credential_changes` is set
-5948
-5910
-5862
+5948,,,,,
+5910,,,,,
+5862,,,,,
 5880,1.16.0.pre.1,Bugfixes,,stan3,use ssl client cert and ca cert settings from gem configuration as fallbacks
-5938
+5938,,,,,
 5908,2.0.0.pre.1,Features,5905,segiddins,"globally cache extensions after they have been built, dramatically speeding up installation of the same gem into different projects"
 5720,2.0.0.pre.1,Features,,segiddins,add a compatibility guard so running bundler on unsupported ruby and rubygems versions will print a friendly error
-5873
+5873,,,,,
 5960,1.16.0.pre.1,Bugfixes,5958,shyouhei,avoid global namespace pollution when loading gems
 5956,1.16.0.pre.1,Bugfixes,,segiddins,avoid running a complete re-resolve on `bundle update --bundler`
-5957
+5957,,,,,
 5976,1.16.0.pre.1,Bugfixes,,colby-swandale,allow `bundle binstubs --standalone` to work without `path` being set
-5973
+5973,,,,,
 5955,2.0.0.pre.1,Features,,segiddins,`bundle cache` will default to always packaging all gems
 5638,1.16.0.pre.1,Features,,segiddins,making an outdated (and insecure) TLS connection to rubygems.org will print a warning
-5980
-5977
+5980,,,,,
+5977,,,,,
 5961,2.0.0.pre.1,Features,5875,segiddins,`bundle install` will automatically clean `./.bundle` of unused gems when no explicit path has been set
-5979
+5979,,,,,
 5978,1.16.0.pre.1,Bugfixes,5975,torcido,fix support for bundle paths that include jars or wars on jruby
-5983
-5904
+5983,,,,,
+5904,,,,,
 6003,1.16.0.pre.2,Bugfixes,,greysteil,handle when a connection is missing a socket when warning about OpenSSL version
-5995
+5995,,,,,
