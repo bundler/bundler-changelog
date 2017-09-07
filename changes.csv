@@ -1378,8 +1378,8 @@ isolation."
 5717,,,,,
 5681,1.16.0.pre.1,Bugfixes,,segiddins,ensure `bundle pristine` removes files added to a git gem
 5681,1.16.0.pre.1,Features,,segiddins,allow passing gem names to `bundle pristine`
-5705,2.0.0.pre.1,Features,5698,segiddins,remove the `github.https` setting
-5705,2.0.0.pre.1,Features,5699,segiddins,remove the `github` gemfile git source shortcut
+5705,2.0.0.pre.1,Deprecations,5698,segiddins,remove the `github.https` setting
+5705,2.0.0.pre.1,Deprecations,5699,segiddins,remove the `github` gemfile git source shortcut
 5722,2.0.0.pre.1,Features,2646,segiddins|jhhere,require passing `--all` to `bundle update` to update all gems
 5484,,,,,
 5702,1.16.0.pre.1,Bugfixes,5429,segiddins,load plugin files from path gems before gem installation
@@ -1388,7 +1388,7 @@ isolation."
 5721,1.16.0.pre.1,Features,4070,segiddins|Zorbash,add the `--shebang` option to `bundle binstubs`
 5718,1.16.0.pre.1,Features,4952|3096|4417,segiddins,gemfiles are `eval`ed one fewer time when running `bundle install`
 5783,1.16.0.pre.1,Bugfixes,5730,segiddins,ensure gems containing manpages are properly set up
-5727,2.0.0.pre.1,Bugfixes,,segiddins,`bundle update --source NAME` will no longer unlock a gem with the given `NAME`
+5727,2.0.0.pre.1,Deprecations,,segiddins,`bundle update --source NAME` will no longer unlock a gem with the given `NAME`
 5795,,,,,
 5802,,,,,
 5805,,,,,
@@ -1401,10 +1401,10 @@ isolation."
 5782,2.0.0.pre.1,Features,3983,segiddins|smlance,add a global cache for downloaded `.gem` files
 5792,2.0.0.pre.1,Features,3671|3696|4059,segiddins,"pin gems to only come either from the source they were declared to come from (the top-level source if declared at the top-level of the Gemfile, else a scoped source), or a source that it transitively ""inherited"" from the gems that required it"
 5823,,,,,
-5820,2.0.0.pre.1,Features,,segiddins,default git sources have been removed
+5820,2.0.0.pre.1,Deprecations,,segiddins,default git sources have been removed
 5827,,,,,
 5833,,,,,
-5793,2.0.0.pre.1,Features,4025|4034,segiddins|Zorbash,remove the `bundle console` command in favor of `bundle gem`'s `bin/console` binstub
+5793,2.0.0.pre.1,Deprecations,4025|4034,segiddins|Zorbash,remove the `bundle console` command in favor of `bundle gem`'s `bin/console` binstub
 5832,,,,,
 5613,1.16.0.pre.1,Features,,segiddins,the `fileutils` gem is now vendored so different versions of the gem can be activated
 5790,2.0.0.pre.1,Features,3872,segiddins,suppress `using...` messages during installation when the version of a gem has not changed
@@ -1419,7 +1419,7 @@ isolation."
 5857,,,,,
 5850,1.16.0.pre.1,Bugfixes,5846,segiddins,show a more helpful error message when a gem fails to install due to a corrupted lockfile
 5858,,,,,
-5843,2.0.0.pre.1,Features,4619,segiddins,remove the `frozen` setting in favor of `deployment`
+5843,2.0.0.pre.1,Deprecations,4619,segiddins,remove the `frozen` setting in favor of `deployment`
 5853,,,,,
 5852,1.16.0.pre.1,Bugfixes,5851,stefansedich,add a process lock to allow multiple concurrent `bundle install`s
 5864,,,,,
@@ -1428,7 +1428,7 @@ isolation."
 5871,1.16.0.pre.1,Bugfixes,,greysteil,ensure that specifications always return an array for `#extensions`
 5844,1.16.0.pre.1,Features,5842,segiddins,speed up no-op installations
 5822,1.16.0.pre.1,Features,,deivid-rodriguez,default to keeping the lockfile in the default gem template
-5811,2.0.0.pre.1,Features,3955,segidins,the bundler CLI will no longer persist options and flags
+5811,2.0.0.pre.1,Deprecations,3955,segidins,the bundler CLI will no longer persist options and flags
 5887,,,,,
 5888,,,,,
 5883,,,,,

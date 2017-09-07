@@ -6,21 +6,15 @@ Features:
 
   - errors are printed to `stderr` instead of `stdout` (@colby-swandale)
   - `bundle init` generates a `gems.rb` instead of a `Gemfile` (@colby-swandale)
-  - remove the `github.https` setting (#5698, @segiddins)
-  - remove the `github` gemfile git source shortcut (#5699, @segiddins)
   - require passing `--all` to `bundle update` to update all gems (#2646, @segiddins, @jhhere)
   - bundler will prefer a `gems.rb` file in the same directory as a `Gemfile` (@segiddins)
   - allow conflicts between bundler dependencies and the current bundler version (#3871, @segiddins)
   - running `bundle` without an explicit command prints a concise help message instead of installing (#3831, #5963, @segiddins)
   - add a global cache for downloaded `.gem` files (#3983, @segiddins, @smlance)
   - pin gems to only come either from the source they were declared to come from (the top-level source if declared at the top-level of the Gemfile, else a scoped source), or a source that it transitively "inherited" from the gems that required it (#3671, #3696, #4059, @segiddins)
-  - default git sources have been removed (@segiddins)
-  - remove the `bundle console` command in favor of `bundle gem`'s `bin/console` binstub (#4025, #4034, @segiddins, @Zorbash)
   - suppress `using...` messages during installation when the version of a gem has not changed (#3872, @segiddins)
   - the `bundle cache` command will behave the same as the `package` command (#4008, @segiddins)
   - default to resolving for "specific" platform triples, instead of "generic" platforms (@segiddins)
-  - remove the `frozen` setting in favor of `deployment` (#4619, @segiddins)
-  - the bundler CLI will no longer persist options and flags (#3955, @segidins)
   - default installation to `./.bundle` instead of the prior default of the system gem path (which can be acchieved by setting `path.system`) (@segiddins, @smlance)
   - only print the version number when running `bundle --version` (#4706, @koic)
   - globally cache extensions after they have been built, dramatically speeding up installation of the same gem into different projects (#5905, @segiddins)
@@ -32,13 +26,19 @@ Features:
 
 Bugfixes:
 
-  - `bundle update --source NAME` will no longer unlock a gem with the given `NAME` (@segiddins)
   - `Kernel#gem` is no longer made public (@segiddins)
   - ensure that the git cache is per-user when using per-app installation paths (#5895, @segiddins)
   - installation will use `jobs` jobs, rather than `jobs -1` (#5808, @tjschuck, @segiddins)
 
 Deprecations:
 
+  - remove the `github.https` setting (#5698, @segiddins)
+  - remove the `github` gemfile git source shortcut (#5699, @segiddins)
+  - `bundle update --source NAME` will no longer unlock a gem with the given `NAME` (@segiddins)
+  - default git sources have been removed (@segiddins)
+  - remove the `bundle console` command in favor of `bundle gem`'s `bin/console` binstub (#4025, #4034, @segiddins, @Zorbash)
+  - remove the `frozen` setting in favor of `deployment` (#4619, @segiddins)
+  - the bundler CLI will no longer persist options and flags (#3955, @segidins)
   - the `bundle viz` command has been extracted into a plugin (#5180, @colby-swandale)
 
 ## 1.16.0.pre.2
