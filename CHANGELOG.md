@@ -41,7 +41,7 @@ Deprecations:
   - the bundler CLI will no longer persist options and flags (#3955, @segidins)
   - the `bundle viz` command has been extracted into a plugin (#5180, @colby-swandale)
 
-## 1.16.0.pre.2
+## 1.16.0.pre.2 (2017-09-06)
 
 Bugfixes:
 
