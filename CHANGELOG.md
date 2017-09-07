@@ -27,18 +27,27 @@ Features:
   - add a compatibility guard so running bundler on unsupported ruby and rubygems versions will print a friendly error (@segiddins)
   - `bundle cache` will default to always packaging all gems (@segiddins)
   - `bundle install` will automatically clean `./.bundle` of unused gems when no explicit path has been set (#5875, @segiddins)
+  - add subcommands to `bundle config` (`list`, `get`, `set`, and `unset`) (#4600, #5507, @denniss, @segiddins)
+  - bundler automatically uses `nproc` jobs when installing gems (#5808, @segiddins)
 
 Bugfixes:
 
   - `bundle update --source NAME` will no longer unlock a gem with the given `NAME` (@segiddins)
   - `Kernel#gem` is no longer made public (@segiddins)
   - ensure that the git cache is per-user when using per-app installation paths (#5895, @segiddins)
+  - installation will use `jobs` jobs, rather than `jobs -1` (#5808, @tjschuck, @segiddins)
+
+Deprecations:
+
+  - the `bundle viz` command has been extracted into a plugin (#5180, @colby-swandale)
 
 ## 1.16.0.pre.2
 
 Bugfixes:
 
   - handle when a connection is missing a socket when warning about OpenSSL version (@greysteil)
+  - the description for the `rake release` task now reflects `$RUBYGEMS_HOST` (@wadetandy)
+  - fix a bug where `bundle update` would regress transitive dependencies (@greysteil)
 
 ## 1.16.0.pre.1 (2017-09-04)
 
