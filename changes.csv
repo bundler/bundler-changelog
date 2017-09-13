@@ -1490,3 +1490,14 @@ isolation."
 5986,2.0.0.pre.1,Features,5808,segiddins,bundler automatically uses `nproc` jobs when installing gems
 5986,2.0.0.pre.1,Bugfixes,5808,tjschuck|segiddins,"installation will use `jobs` jobs, rather than `jobs -1`"
 6009,1.16.0.pre.2,Bugfixes,,greysteil,fix a bug where `bundle update` would regress transitive dependencies
+6005,,,,,
+6007,,,,,
+5991,,,,,
+6015,1.16.0.pre.3,Bugfixes,6013,olleolleolle,fix a bug where installing on FreeBSD would accidentally raise an error
+5985,2.0.0.pre.1,Features,4629,segiddins,the resolver will error when it is ambiguous which source a gem should come from
+5803,2.0.0.pre.1,Bugfixes,2048,igorbozato|segiddins,an explicit relative `path` is expanded relative to the current working directory when set
+6014,1.16.0.pre.3,Bugfixes,,greysteil,fix a regression in 1.16 where pre-release gems could accidentally be resolved even when the gemfile contained no pre-release requirements
+5954,2.0.0.pre.1,Bugfixes,5518,ajwann,fail gracefully when creating a temporary directory for the compact index fails
+6025,,,,,
+6011,1.16.0.pre.3,Features,,indirect,"the output from `bundle env` includes more information, particularly both the compiled & loaded versions of OpenSSL"
+6022,1.16.0.pre.3,Bugfixes,,segiddins,"bundler will avoid making unnecessary network requests to fetch dependency data, fixing a regression introduced in 1.16"
