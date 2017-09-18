@@ -24,6 +24,7 @@ Features:
   - add subcommands to `bundle config` (`list`, `get`, `set`, and `unset`) (#4600, #5507, @denniss, @segiddins)
   - bundler automatically uses `nproc` jobs when installing gems (#5808, @segiddins)
   - the resolver will error when it is ambiguous which source a gem should come from (#4629, @segiddins)
+  - allow users to override `~/.bundle` locations by setting the `BUNDLE_USER_{HOME,CACHE,CONFIG,PLUGIN}` environment variables (#4333, @gwerbin)
 
 Bugfixes:
 
@@ -32,6 +33,7 @@ Bugfixes:
   - installation will use `jobs` jobs, rather than `jobs -1` (#5808, @tjschuck, @segiddins)
   - an explicit relative `path` is expanded relative to the current working directory when set (#2048, @igorbozato, @segiddins)
   - fail gracefully when creating a temporary directory for the compact index fails (#5518, @ajwann)
+  - invalid `.gem` files will be removed instead of being cached (#5941, @segiddins)
 
 Deprecations:
 
@@ -43,6 +45,7 @@ Deprecations:
   - remove the `frozen` setting in favor of `deployment` (#4619, @segiddins)
   - the bundler CLI will no longer persist options and flags (#3955, @segidins)
   - the `bundle viz` command has been extracted into a plugin (#5180, @colby-swandale)
+  - `bundle outdated` has `--strict` renamed to `--filter-strict` and `--update-strict` to `--strict` (#5081, @segiddins)
 
 ## 1.16.0.pre.3
 
@@ -55,6 +58,7 @@ Bugfixes:
   - fix a bug where installing on FreeBSD would accidentally raise an error (#6013, @olleolleolle)
   - fix a regression in 1.16 where pre-release gems could accidentally be resolved even when the gemfile contained no pre-release requirements (@greysteil)
   - bundler will avoid making unnecessary network requests to fetch dependency data, fixing a regression introduced in 1.16 (@segiddins)
+  - the outdated bundler version message is disabled by default until the message has been fine-tuned (#6004, @segiddins)
 
 ## 1.16.0.pre.2 (2017-09-06)
 
