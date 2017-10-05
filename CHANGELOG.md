@@ -47,7 +47,7 @@ Deprecations:
   - the `bundle viz` command has been extracted into a plugin (#5180, @colby-swandale)
   - `bundle outdated` has `--strict` renamed to `--filter-strict` and `--update-strict` to `--strict` (#5081, @segiddins)
 
-## 1.16.0.pre.3
+## 1.16.0.pre.3 (2017-10-04)
 
 Features:
 
