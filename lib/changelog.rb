@@ -23,7 +23,11 @@ class Changelog
         section.entries.each do |entry|
           to.print '  - '
           to.print entry.message
-          details = entry.issues.map { |i| i.include?('#') ? i : "##{i}" } + entry.authors.map { |a| "@#{a}" }
+          details = entry.issues.map do |i| 
+            i = i.sub(/^#/, '')
+            "[##{i}](https://github.com/bundler/issues/#{i})"
+          end
+          details += entry.authors.map { |a| "@#{a}" }
           to.print " (#{details.join(', ')})" unless details.empty?
           to.puts
         end

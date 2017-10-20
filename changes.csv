@@ -1506,3 +1506,26 @@ isolation."
 6010,2.0.0.pre.1,Bugfixes,5941,segiddins,invalid `.gem` files will be removed instead of being cached
 6024,2.0.0.pre.1,Features,4333,gwerbin,"allow users to override `~/.bundle` locations by setting the `BUNDLE_USER_{HOME,CACHE,CONFIG,PLUGIN}` environment variables"
 6038,,,,,
+6057,,,,,
+6056,,,,,
+6068,,,,,
+6059,,,,,
+5889,,,,,
+6073,,,,,
+6053,,,,,
+6036,2.0.0.pre.1,Bugfixes,,nobu,avoid using a shell in the Rakefile gem helper tasks
+6075,,,,,
+6081,,,,,
+6078,,,,,
+6054,,,,,
+6084,,,,,
+6080,,,,,
+6088,1.16.0,Bugfixes,,segiddins,avoid new RubyGems warning about unsafe YAML loading (to keep output consistent)
+6101,1.16.0,Bugfixes,,segiddins|colby-swandale,load digest subclasses in a thread-safe manner
+6102,1.16.0,Bugfixes,,amatsuda,avoid unusued variable warnings under ruby 2.5
+6099,,,,,
+6098,1.16.0,Bugfixes,6028,akhramov,fix printing the same message twice in verbose mode
+6096,,,,,
+6092,1.16.0,Bugfixes,6090,dekellum,allow `SignalException`s to bubble up to the interpreter during `bundle exec`
+6109,,,,,
+6100,,,,,
