@@ -1529,3 +1529,11 @@ isolation."
 6092,1.16.0,Bugfixes,6090,dekellum,allow `SignalException`s to bubble up to the interpreter during `bundle exec`
 6109,,,,,
 6100,,,,,
+6120,2.0.0.pre.1,Features,5672|5467,jumbosushi,add a `bundle plugin list` command
+6119,1.16.0,Bugfixes,,segiddins,avoid activating stdlib digest under Ruby 2.5
+6116,2.0.0.pre.1,Bugfixes,6115,segiddins,support `bundle outdated --group` with the second group for a dependency
+6125,,,,,
+6123,,,,,
+6128,1.16.0,Bugfixes,,segiddins,prioritise explicitly requested gems in dependency resolution sort order
+6131,1.16.0,Bugfixes,6114,greysteil,reduce memory usage during dependency resolution
+6133,1.16.0,Bugfixes,,segiddins,ensure that the default bundler gem is not accidentally activated on ruby 2.5 when using local git overrides

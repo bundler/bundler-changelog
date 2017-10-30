@@ -25,6 +25,7 @@ Features:
   - bundler automatically uses `nproc` jobs when installing gems ([#5808](https://github.com/bundler/issues/5808), @segiddins)
   - the resolver will error when it is ambiguous which source a gem should come from ([#4629](https://github.com/bundler/issues/4629), @segiddins)
   - allow users to override `~/.bundle` locations by setting the `BUNDLE_USER_{HOME,CACHE,CONFIG,PLUGIN}` environment variables ([#4333](https://github.com/bundler/issues/4333), @gwerbin)
+  - add a `bundle plugin list` command ([#5672](https://github.com/bundler/issues/5672), [#5467](https://github.com/bundler/issues/5467), @jumbosushi)
 
 Bugfixes:
 
@@ -35,6 +36,7 @@ Bugfixes:
   - fail gracefully when creating a temporary directory for the compact index fails ([#5518](https://github.com/bundler/issues/5518), @ajwann)
   - invalid `.gem` files will be removed instead of being cached ([#5941](https://github.com/bundler/issues/5941), @segiddins)
   - avoid using a shell in the Rakefile gem helper tasks (@nobu)
+  - support `bundle outdated --group` with the second group for a dependency ([#6115](https://github.com/bundler/issues/6115), @segiddins)
 
 Deprecations:
 
@@ -57,6 +59,10 @@ Bugfixes:
   - avoid unusued variable warnings under ruby 2.5 (@amatsuda)
   - fix printing the same message twice in verbose mode ([#6028](https://github.com/bundler/issues/6028), @akhramov)
   - allow `SignalException`s to bubble up to the interpreter during `bundle exec` ([#6090](https://github.com/bundler/issues/6090), @dekellum)
+  - avoid activating stdlib digest under Ruby 2.5 (@segiddins)
+  - prioritise explicitly requested gems in dependency resolution sort order (@segiddins)
+  - reduce memory usage during dependency resolution ([#6114](https://github.com/bundler/issues/6114), @greysteil)
+  - ensure that the default bundler gem is not accidentally activated on ruby 2.5 when using local git overrides (@segiddins)
 
 ## 1.16.0.pre.3 (2017-10-04)
 
