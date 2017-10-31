@@ -25,7 +25,7 @@ class Changelog
           to.print entry.message
           details = entry.issues.map do |i| 
             i = i.sub(/^#/, '')
-            "[##{i}](https://github.com/bundler/issues/#{i})"
+            "[##{i}](https://github.com/bundler/bundler/issues/#{i})"
           end
           details += entry.authors.map { |a| "@#{a}" }
           to.print " (#{details.join(', ')})" unless details.empty?
