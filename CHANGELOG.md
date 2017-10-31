@@ -50,7 +50,7 @@ Deprecations:
   - the `bundle viz` command has been extracted into a plugin ([#5180](https://github.com/bundler/bundler/issues/5180), @colby-swandale)
   - `bundle outdated` has `--strict` renamed to `--filter-strict` and `--update-strict` to `--strict` ([#5081](https://github.com/bundler/bundler/issues/5081), @segiddins)
 
-## 1.16.0
+## 1.16.0 (2017-10-31)
 
 Bugfixes:
 
