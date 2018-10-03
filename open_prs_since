@@ -4,7 +4,7 @@ require 'csv'
 
 def prs(on = 'master')
   commits = `git log --oneline origin/#{on} --`.split("\n")
-  commits.reverse_each.map { |c| c =~ /(Auto merge of|Merge pull request) #(\d+)/ && Regexp.last_match(2) }.compact
+  commits.reverse_each.map { |c| c =~ /(Auto merge of|Merge pull request|Merge) #(\d+)/ && Regexp.last_match(2) }.compact
 end
 
 # last_stable = `git ls-remote origin`.split("\n").map {|r| r =~ %r{refs/tags/v([\d.]+)$} && $1 }.compact.map {|v| Gem::Version.create(v) }.max
